@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EU Price Hunter | Compare European Prices</title>
+  <meta name="description" content="EU Price Hunter is developing a transparent comparison platform for products from Bulgarian and European retailers.">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #142443; background: #f4f7fc; line-height: 1.6; }
+    header { background: #fff; padding: 18px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .brand { font-weight: 800; font-size: 22px; }
+    .lang button { border: 1px solid #cbd7ed; border-radius: 7px; background: white; padding: 8px 14px; cursor: pointer; }
+    .lang button.active { background: #245cf0; color: white; }
+    .hero { background: linear-gradient(120deg,#163778,#205bc1); color: white; padding: 85px 7%; }
+    .hero h1 { font-size: clamp(32px,5vw,58px); max-width: 780px; line-height: 1.13; }
+    .hero p { font-size: 19px; max-width: 720px; }
+    main { max-width: 1100px; margin: auto; padding: 45px 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+    .card { background: white; padding: 25px; border-radius: 15px; border: 1px solid #dfe7f4; }
+    .card h3 { margin-top: 0; }
+    .notice { background: #fff5e3; border: 1px solid #f3d59a; padding: 20px; border-radius: 12px; margin-top: 30px; }
+    footer { text-align: center; padding: 30px; color: #526685; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">€ EU Price Hunter</div>
+  <div class="lang">
+    <button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
+    <button id="bgBtn" onclick="setLanguage('bg')">BG</button>
+  </div>
+</header>
+
+<section id="en">
+  <div class="hero">
+    <h1>Compare prices.<br>Know the real cost.</h1>
+    <p>EU Price Hunter is developing an independent platform to compare offers from Bulgarian and European online retailers, with a focus on the total cost delivered to Bulgaria.</p>
+  </div>
+  <main>
+    <h2>What we're building</h2>
+    <div class="cards">
+      <div class="card"><h3>Computers & Phones</h3><p>Compare laptops, smartphones, monitors and computer equipment.</p></div>
+      <div class="card"><h3>Electronics</h3><p>Explore consumer electronics across multiple retailers.</p></div>
+      <div class="card"><h3>Home Appliances</h3><p>Compare appliances using product prices and available delivery information.</p></div>
+    </div>
+    <div class="notice"><strong>Coming soon.</strong> Our comparison service is under development. Live retailer offers and purchasing links are not yet available.</div>
+    <h2>Our approach</h2>
+    <p>We aim to present product prices, delivery costs and applicable additional charges transparently. Retailer information and affiliate partnerships will be clearly disclosed.</p>
+  </main>
+</section>
+
+<section id="bg" hidden>
+  <div class="hero">
+    <h1>Сравнявай цени.<br>Знай реалната стойност.</h1>
+    <p>EU Price Hunter разработва независима платформа за сравнение на оферти от български и европейски онлайн магазини с акцент върху крайната цена с доставка до България.</p>
+  </div>
+  <main>
+    <h2>Какво разработваме</h2>
+    <div class="cards">
+      <div class="card"><h3>Компютри и телефони</h3><p>Сравнение на лаптопи, смартфони, монитори и компютърна техника.</p></div>
+      <div class="card"><h3>Електроника</h3><p>Сравнение на потребителска електроника от различни търговци.</p></div>
+      <div class="card"><h3>Домакински уреди</h3><p>Сравнение на цени на уреди и налична информация за доставка.</p></div>
+    </div>
+    <div class="notice"><strong>Очаквайте скоро.</strong> Платформата е в процес на разработка. Все още няма реални оферти и връзки за покупка.</div>
+    <h2>Нашият подход</h2>
+    <p>Стремим се да показваме прозрачно цените на продуктите, доставката и приложимите допълнителни разходи. Информацията за търговците и партньорските отношения ще бъде ясно обозначена.</p>
+  </main>
+</section>
+
+<footer>© 2026 EU Price Hunter · Independent European price comparison</footer>
+<script>
+  function setLanguage(lang) {
+    document.getElementById('en').hidden = lang !== 'en';
+    document.getElementById('bg').hidden = lang !== 'bg';
+    document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+    document.getElementById('bgBtn').classList.toggle('active', lang === 'bg');
+    document.documentElement.lang = lang;
+  }
+</script>
+</body>
+</html>
